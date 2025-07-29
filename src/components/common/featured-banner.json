@@ -1,8 +1,8 @@
 {
-  "collectionName": "components_shared_hero_sections",
+  "collectionName": "components_common_featured_banners",
   "info": {
-    "displayName": "Hero Section",
-    "icon": "monitor"
+    "displayName": "Featured Banner",
+    "icon": "earth"
   },
   "options": {},
   "attributes": {
@@ -10,17 +10,13 @@
       "type": "string",
       "required": true
     },
-    "subtitle": {
-      "type": "string"
-    },
-    "heroMedia": {
+    "logos": {
       "type": "media",
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "allowedTypes": [
         "images",
-        "files",
-        "videos"
+        "files"
       ]
     }
   },

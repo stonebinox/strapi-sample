@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_common_maps",
+  "info": {
+    "displayName": "Map",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "studioHoursText": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

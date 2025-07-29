@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_common_cta_callouts",
+  "info": {
+    "displayName": "CTA Callout",
+    "icon": "cursor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaUrl": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "secondaryCtaUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -11,24 +11,36 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
     "domainSuffix": {
       "type": "string",
       "default": "au",
       "required": true
     },
-    "slug": {
+    "title": {
       "type": "string",
       "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": false
     },
     "sections": {
       "type": "dynamiczone",
       "components": [
         "shared.hero-section",
-        "shared.quote"
+        "shared.quote",
+        "shared.testimonial",
+        "shared.testimonial-group",
+        "common.navigator",
+        "common.cta-callout",
+        "common.featured-banner",
+        "common.hero-with-testimonial",
+        "common.featured-banner-split",
+        "common.feature-banner-vertical-split",
+        "common.testimonial-banner",
+        "common.map",
+        "common.footer"
       ],
       "required": true
     }

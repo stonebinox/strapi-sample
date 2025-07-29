@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_common_testimonial_banners",
+  "info": {
+    "displayName": "Testimonial Banner",
+    "icon": "heart"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "shared.testimonial-group",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_common_navigators",
+  "info": {
+    "displayName": "Navigator",
+    "icon": "hashtag"
+  },
+  "options": {},
+  "attributes": {
+    "menuItem": {
+      "type": "component",
+      "component": "common.navigator-option",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

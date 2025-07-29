@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_common_links",
+  "info": {
+    "displayName": "Links",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "linkLabel": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

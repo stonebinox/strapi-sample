@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_common_navigator_options",
+  "info": {
+    "displayName": "Navigator Option",
+    "icon": "pencil"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "hasSubMenu": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    },
+    "subMenu": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasSubMenu"
+            },
+            true
+          ]
+        }
+      },
+      "component": "common.navigator-option-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_common_navigator_option_items",
+  "info": {
+    "displayName": "Navigator Option Item",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

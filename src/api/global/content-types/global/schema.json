@@ -29,11 +29,6 @@
     "siteDescription": {
       "type": "text",
       "required": true
-    },
-    "defaultSeo": {
-      "type": "component",
-      "component": "shared.seo",
-      "repeatable": false
     }
   }
 }

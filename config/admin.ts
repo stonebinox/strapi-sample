@@ -1,7 +1,6 @@
 // Function to generate preview pathname based on content type and document
 const getPreviewPathname = (uid, { locale, document }): string => {
   const { slug } = document;
-  console.log("slug", slug, uid);
 
   // Handle different content types with their specific URL patterns
   switch (uid) {
@@ -23,7 +22,8 @@ const getPreviewPathname = (uid, { locale, document }): string => {
 
 export default ({ env }) => {
   // Get environment variables
-  const clientUrl = env("CLIENT_URL"); // Frontend application URL
+  const clientBase = env("CLIENT_URL"); // e.g. http://prontopilates.com
+  const clientPort = env("CLIENT_PORT") || null;
   const previewSecret = env("PREVIEW_SECRET"); // Secret key for preview authentication
 
   return {
@@ -48,7 +48,11 @@ export default ({ env }) => {
     preview: {
       enabled: true, // Enable preview functionality
       config: {
-        allowedOrigins: clientUrl, // Restrict preview access to specific domain
+        allowedOrigins: [
+          "http://localhost:3000",
+          "http://pronto.com.au:3000",
+          "http://pronto.com.nz:3000",
+        ], // we edit these depending on when we edit stuff
         async handler(uid, { documentId, locale, status }) {
           // Fetch the complete document from Strapi
           const document = await strapi.documents(uid).findOne({ documentId });
@@ -61,12 +65,21 @@ export default ({ env }) => {
             return null;
           }
 
+          // Build clientUrl and allowedOrigins dynamically using domainSuffix
+          const suffix = document.domainSuffix || "au";
+          let clientUrl = `${clientBase}.${suffix}`;
+
+          if (clientPort) {
+            clientUrl += `:${clientPort}`;
+          }
+
           // Use Next.js draft mode passing it a secret key and the content-type status
           const urlSearchParams = new URLSearchParams({
             url: pathname,
             secret: previewSecret,
             status,
           });
+
           return `${clientUrl}/api/preview?${urlSearchParams}`;
         },
       },

@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_common_hero_with_testimonials",
+  "info": {
+    "displayName": "HeroWithTestimonial",
+    "icon": "monitor"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "required": true
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "testimonial": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

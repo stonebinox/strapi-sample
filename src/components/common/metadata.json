@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_common_metadata",
+  "info": {
+    "displayName": "metadata",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "pageTitle": {
+      "type": "string",
+      "required": true
+    },
+    "keywords": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

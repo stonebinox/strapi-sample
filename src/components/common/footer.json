@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_common_footers",
+  "info": {
+    "displayName": "Footer",
+    "icon": "pin"
+  },
+  "options": {},
+  "attributes": {
+    "subtitle": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "component": "common.links",
+      "repeatable": true,
+      "required": true
+    },
+    "appSectionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "appleStoreLink": {
+      "type": "string",
+      "required": false
+    },
+    "androidStoreLink": {
+      "type": "string"
+    },
+    "contactSectionTitle": {
+      "type": "string",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "required": true
+    },
+    "facebookLink": {
+      "type": "string"
+    },
+    "instagramLink": {
+      "type": "string"
+    },
+    "copyrightLink": {
+      "type": "string",
+      "required": true
+    },
+    "legalLink": {
+      "type": "string",
+      "required": true
+    },
+    "privacyLink": {
+      "type": "string",
+      "required": true
+    },
+    "sitemapLink": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

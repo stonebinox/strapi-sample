@@ -1,0 +1,63 @@
+{
+  "collectionName": "components_common_featured_banner_splits",
+  "info": {
+    "displayName": "Featured Banner Split",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "featuredImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "component",
+      "component": "common.text-list",
+      "repeatable": true,
+      "required": true
+    },
+    "footerText": {
+      "type": "text"
+    },
+    "hasCta": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "ctaLabel": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasCta"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "ctaLink": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasCta"
+            },
+            true
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

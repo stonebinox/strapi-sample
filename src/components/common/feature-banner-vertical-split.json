@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_common_feature_banner_vertical_splits",
+  "info": {
+    "displayName": "Feature Banner Vertical Split",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "bannerImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaLink": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

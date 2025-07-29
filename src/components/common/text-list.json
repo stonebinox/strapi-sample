@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_common_text_lists",
+  "info": {
+    "displayName": "Text List",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}
