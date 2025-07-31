@@ -30,6 +30,7 @@ export default ({ env }) => {
     // If running locally (clientBase has a port), return suffix or 'au'
     try {
       const url = new URL(clientBase);
+
       if (url.port) {
         return suffix || "au";
       }
