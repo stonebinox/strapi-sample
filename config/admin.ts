@@ -26,6 +26,25 @@ export default ({ env }) => {
   const clientPort = env("CLIENT_PORT") || null;
   const previewSecret = env("PREVIEW_SECRET"); // Secret key for preview authentication
 
+  const getSuffix = (suffix: string) => {
+    // If running locally (clientBase has a port), return suffix or 'au'
+    try {
+      const url = new URL(clientBase);
+      if (url.port) {
+        return suffix || "au";
+      }
+    } catch {
+      // If clientBase is not a valid URL, fallback
+      return suffix || "au";
+    }
+    // If domain, map suffix to Netlify domains
+    if (suffix === "nz") {
+      return "pp-landing-nz.netlify.app";
+    }
+    // Default to AU Netlify domain
+    return "pp-landing.netlify.app";
+  };
+
   return {
     auth: {
       secret: env("ADMIN_JWT_SECRET"),
@@ -69,10 +88,18 @@ export default ({ env }) => {
 
           // Build clientUrl and allowedOrigins dynamically using domainSuffix
           const suffix = document.domainSuffix || "au";
-          let clientUrl = `${clientBase}.${suffix}`;
+          let clientUrl;
+          const resolved = getSuffix(suffix);
 
-          if (clientPort) {
-            clientUrl += `:${clientPort}`;
+          // If running locally, resolved will be 'au' or 'nz', so use clientBase as base
+          if (resolved === "au" || resolved === "nz") {
+            clientUrl = `${clientBase}.${resolved}`;
+            if (clientPort) {
+              clientUrl += `:${clientPort}`;
+            }
+          } else {
+            // Use the mapped Netlify domain
+            clientUrl = `https://${resolved}`;
           }
 
           // Use Next.js draft mode passing it a secret key and the content-type status
