@@ -124,9 +124,14 @@ export interface CommonMap extends Struct.ComponentSchema {
   };
   attributes: {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    latitude: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    longitude: Schema.Attribute.Decimal & Schema.Attribute.Required;
     studioHoursText: Schema.Attribute.String & Schema.Attribute.Required;
     subtitle: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+    zoomLevel: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<5>;
   };
 }
 
