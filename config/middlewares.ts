@@ -1,6 +1,5 @@
 export default [
   "strapi::logger",
-  "strapi::errors",
   {
     name: "strapi::security",
     config: {
@@ -35,6 +34,7 @@ export default [
     },
   },
   "strapi::cors",
+  "strapi::errors",
   "strapi::poweredBy",
   "strapi::query",
   "strapi::body",
