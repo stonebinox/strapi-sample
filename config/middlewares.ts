@@ -1,8 +1,8 @@
 export default [
   "strapi::logger",
+  "strapi::errors",
   {
     name: "strapi::security",
-    "strapi::errors",
     config: {
       frameOptions: false,
       contentSecurityPolicy: {
