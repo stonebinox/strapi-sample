@@ -2,6 +2,7 @@ export default [
   "strapi::logger",
   {
     name: "strapi::security",
+    "strapi::errors",
     config: {
       frameOptions: false,
       contentSecurityPolicy: {
@@ -33,7 +34,6 @@ export default [
       },
     },
   },
-  "strapi::errors",
   "strapi::cors",
   "strapi::poweredBy",
   "strapi::query",
