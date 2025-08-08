@@ -28,6 +28,10 @@
     },
     "secondaryCtaUrl": {
       "type": "string"
+    },
+    "richDescription": {
+      "type": "richtext",
+      "required": false
     }
   },
   "config": {}

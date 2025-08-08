@@ -10,6 +10,7 @@ export interface CommonCtaCallout extends Struct.ComponentSchema {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaUrl: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
+    richDescription: Schema.Attribute.RichText;
     secondaryCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     secondaryCtaUrl: Schema.Attribute.String;
     title: Schema.Attribute.String & Schema.Attribute.Required;

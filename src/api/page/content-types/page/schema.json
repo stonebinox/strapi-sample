@@ -43,6 +43,9 @@
         "common.footer"
       ],
       "required": true
+    },
+    "pageStyle": {
+      "type": "text"
     }
   }
 }
