@@ -59,11 +59,12 @@ export interface CommonFeaturedBannerSplit extends Struct.ComponentSchema {
     description: Schema.Attribute.Component<'common.text-list', true> &
       Schema.Attribute.Required;
     featuredImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    footerText: Schema.Attribute.Text;
+    footerText: Schema.Attribute.RichText & Schema.Attribute.Required;
     hasCta: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -225,7 +226,7 @@ export interface CommonTextList extends Struct.ComponentSchema {
     icon: 'layer';
   };
   attributes: {
-    text: Schema.Attribute.Text & Schema.Attribute.Required;
+    text: Schema.Attribute.RichText & Schema.Attribute.Required;
   };
 }
 

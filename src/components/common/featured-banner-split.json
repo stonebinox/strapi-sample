@@ -7,7 +7,15 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string",
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "component",
+      "component": "common.text-list",
+      "repeatable": true,
       "required": true
     },
     "featuredImage": {
@@ -18,14 +26,9 @@
         "images"
       ]
     },
-    "description": {
-      "type": "component",
-      "component": "common.text-list",
-      "repeatable": true,
-      "required": true
-    },
     "footerText": {
-      "type": "text"
+      "type": "richtext",
+      "required": true
     },
     "hasCta": {
       "type": "boolean",
