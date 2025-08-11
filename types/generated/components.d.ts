@@ -29,7 +29,8 @@ export interface CommonFeatureBannerVerticalSplit
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaLink: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
   };
 }
 

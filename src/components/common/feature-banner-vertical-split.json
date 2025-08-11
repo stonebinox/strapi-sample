@@ -7,7 +7,9 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string",
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
       "required": true
     },
     "description": {
