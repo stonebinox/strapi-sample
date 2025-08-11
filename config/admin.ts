@@ -31,13 +31,14 @@ export default ({ env }) => {
     try {
       const url = new URL(clientBase);
 
-      if (url.port) {
+      if (url.port || url.host === "pronto.com") {
         return suffix || "au";
       }
     } catch {
       // If clientBase is not a valid URL, fallback
       return suffix || "au";
     }
+
     // If domain, map suffix to Netlify domains
     if (suffix === "nz") {
       return "pp-landing-nz.netlify.app";
@@ -95,6 +96,7 @@ export default ({ env }) => {
           // If running locally, resolved will be 'au' or 'nz', so use clientBase as base
           if (resolved === "au" || resolved === "nz") {
             clientUrl = `${clientBase}.${resolved}`;
+
             if (clientPort) {
               clientUrl += `:${clientPort}`;
             }

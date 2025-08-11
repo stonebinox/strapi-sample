@@ -10,8 +10,8 @@
       "type": "string",
       "required": true
     },
-    "description": {
-      "type": "text",
+    "richDescription": {
+      "type": "richtext",
       "required": true
     },
     "ctaLabel": {
@@ -28,10 +28,6 @@
     },
     "secondaryCtaUrl": {
       "type": "string"
-    },
-    "richDescription": {
-      "type": "richtext",
-      "required": false
     }
   },
   "config": {}
