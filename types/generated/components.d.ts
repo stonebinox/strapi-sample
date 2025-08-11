@@ -9,10 +9,11 @@ export interface CommonCtaCallout extends Struct.ComponentSchema {
   attributes: {
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
     richDescription: Schema.Attribute.RichText & Schema.Attribute.Required;
     secondaryCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     secondaryCtaUrl: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -27,7 +28,7 @@ export interface CommonFeatureBannerVerticalSplit
     bannerImage: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaLink: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
@@ -41,7 +42,8 @@ export interface CommonFeaturedBanner extends Struct.ComponentSchema {
   attributes: {
     logos: Schema.Attribute.Media<'images' | 'files', true> &
       Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -89,6 +91,17 @@ export interface CommonFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonHeading extends Struct.ComponentSchema {
+  collectionName: 'components_common_headings';
+  info: {
+    displayName: 'Heading';
+    icon: 'bold';
+  };
+  attributes: {
+    text: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonHeroWithTestimonial extends Struct.ComponentSchema {
   collectionName: 'components_common_hero_with_testimonials';
   info: {
@@ -98,9 +111,10 @@ export interface CommonHeroWithTestimonial extends Struct.ComponentSchema {
   attributes: {
     backgroundImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    shortDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    shortDescription: Schema.Attribute.RichText & Schema.Attribute.Required;
     testimonial: Schema.Attribute.Component<'shared.testimonial', false>;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -224,8 +238,9 @@ export interface SharedHeroSection extends Struct.ComponentSchema {
   attributes: {
     heroMedia: Schema.Attribute.Media<'images' | 'files' | 'videos'> &
       Schema.Attribute.Required;
-    subtitle: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
+    subtitle: Schema.Attribute.Component<'common.heading', false>;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -248,7 +263,7 @@ export interface SharedTestimonial extends Struct.ComponentSchema {
     icon: 'earth';
   };
   attributes: {
-    content: Schema.Attribute.Text & Schema.Attribute.Required;
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
     hasRating: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
@@ -293,6 +308,7 @@ declare module '@strapi/strapi' {
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
       'common.footer': CommonFooter;
+      'common.heading': CommonHeading;
       'common.hero-with-testimonial': CommonHeroWithTestimonial;
       'common.links': CommonLinks;
       'common.map': CommonMap;

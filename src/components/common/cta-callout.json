@@ -6,8 +6,10 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
       "required": true
     },
     "richDescription": {

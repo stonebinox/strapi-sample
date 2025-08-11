@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_common_headings",
+  "info": {
+    "displayName": "Heading",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

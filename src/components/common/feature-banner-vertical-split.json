@@ -10,6 +10,10 @@
       "type": "string",
       "required": true
     },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
     "bannerImage": {
       "type": "media",
       "multiple": false,
@@ -17,10 +21,6 @@
       "allowedTypes": [
         "images"
       ]
-    },
-    "description": {
-      "type": "text",
-      "required": true
     },
     "ctaLabel": {
       "type": "string",

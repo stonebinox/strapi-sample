@@ -6,12 +6,12 @@
   },
   "options": {},
   "attributes": {
-    "content": {
-      "type": "text",
-      "required": true
-    },
     "name": {
       "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "richtext",
       "required": true
     },
     "image": {

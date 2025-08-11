@@ -7,11 +7,13 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string",
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
       "required": true
     },
     "shortDescription": {
-      "type": "text",
+      "type": "richtext",
       "required": true
     },
     "backgroundImage": {
