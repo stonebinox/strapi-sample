@@ -440,7 +440,7 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
-    displayName: 'Footer';
+    displayName: 'Footer AU';
     pluralName: 'footers';
     singularName: 'footer';
   };
