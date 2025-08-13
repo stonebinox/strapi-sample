@@ -12,9 +12,12 @@
   "pluginOptions": {},
   "attributes": {
     "domainSuffix": {
-      "type": "string",
-      "default": "au",
-      "required": true
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "au",
+        "nz"
+      ]
     },
     "title": {
       "type": "string",
