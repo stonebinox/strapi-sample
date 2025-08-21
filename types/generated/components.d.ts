@@ -7,13 +7,28 @@ export interface CommonCtaCallout extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
+    ctaID: Schema.Attribute.String & Schema.Attribute.Unique;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaUrl: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.Component<'common.heading', false> &
       Schema.Attribute.Required;
     richDescription: Schema.Attribute.RichText & Schema.Attribute.Required;
+    secondaryCtaID: Schema.Attribute.String & Schema.Attribute.Unique;
     secondaryCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     secondaryCtaUrl: Schema.Attribute.String;
+  };
+}
+
+export interface CommonDomainSuffix extends Struct.ComponentSchema {
+  collectionName: 'components_common_domain_suffixes';
+  info: {
+    displayName: 'Domain Suffix';
+    icon: 'connector';
+  };
+  attributes: {
+    suffix: Schema.Attribute.Enumeration<['au', 'nz']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'au'>;
   };
 }
 
@@ -203,6 +218,41 @@ export interface CommonNavigatorOptionItem extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonProvince extends Struct.ComponentSchema {
+  collectionName: 'components_common_provinces';
+  info: {
+    displayName: 'Province';
+    icon: 'earth';
+  };
+  attributes: {
+    domainSuffix: Schema.Attribute.Component<'common.domain-suffix', false>;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    studios: Schema.Attribute.Component<'common.studio', true> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface CommonStudio extends Struct.ComponentSchema {
+  collectionName: 'components_common_studios';
+  info: {
+    displayName: 'Studio';
+    icon: 'store';
+  };
+  attributes: {
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
+    domainSuffix: Schema.Attribute.Component<'common.domain-suffix', false>;
+    hasOnSiteParking: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    landmark: Schema.Attribute.String;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    numberOfReformers: Schema.Attribute.Integer & Schema.Attribute.Required;
+    phoneNumber: Schema.Attribute.String & Schema.Attribute.Required;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonTestimonialBanner extends Struct.ComponentSchema {
   collectionName: 'components_common_testimonial_banners';
   info: {
@@ -306,6 +356,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'common.cta-callout': CommonCtaCallout;
+      'common.domain-suffix': CommonDomainSuffix;
       'common.feature-banner-vertical-split': CommonFeatureBannerVerticalSplit;
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
@@ -318,6 +369,8 @@ declare module '@strapi/strapi' {
       'common.navigator': CommonNavigator;
       'common.navigator-option': CommonNavigatorOption;
       'common.navigator-option-item': CommonNavigatorOptionItem;
+      'common.province': CommonProvince;
+      'common.studio': CommonStudio;
       'common.testimonial-banner': CommonTestimonialBanner;
       'common.text-list': CommonTextList;
       'shared.hero-section': SharedHeroSection;

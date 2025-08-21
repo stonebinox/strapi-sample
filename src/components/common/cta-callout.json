@@ -20,6 +20,10 @@
       "type": "string",
       "required": true
     },
+    "ctaID": {
+      "type": "string",
+      "unique": true
+    },
     "ctaUrl": {
       "type": "string",
       "required": true
@@ -30,6 +34,10 @@
     },
     "secondaryCtaUrl": {
       "type": "string"
+    },
+    "secondaryCtaID": {
+      "type": "string",
+      "unique": true
     }
   },
   "config": {}

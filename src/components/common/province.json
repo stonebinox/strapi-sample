@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_common_provinces",
+  "info": {
+    "displayName": "Province",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "domainSuffix": {
+      "type": "component",
+      "component": "common.domain-suffix",
+      "repeatable": false
+    },
+    "studios": {
+      "type": "component",
+      "component": "common.studio",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

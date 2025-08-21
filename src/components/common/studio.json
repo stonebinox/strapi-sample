@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_common_studios",
+  "info": {
+    "displayName": "Studio",
+    "icon": "store"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "numberOfReformers": {
+      "type": "integer",
+      "required": true
+    },
+    "landmark": {
+      "type": "string",
+      "required": false
+    },
+    "hasOnSiteParking": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "domainSuffix": {
+      "type": "component",
+      "component": "common.domain-suffix",
+      "repeatable": false
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

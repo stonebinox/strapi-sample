@@ -47,7 +47,7 @@
       ],
       "required": true
     },
-    "pageStyle": {
+    "additionalCSS": {
       "type": "text"
     }
   }

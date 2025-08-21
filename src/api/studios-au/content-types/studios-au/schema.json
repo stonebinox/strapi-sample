@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "studios_aus",
+  "info": {
+    "singularName": "studios-au",
+    "pluralName": "studios-aus",
+    "displayName": "Studios AU"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "provinces": {
+      "type": "component",
+      "component": "common.province",
+      "repeatable": true,
+      "required": true
+    }
+  }
+}

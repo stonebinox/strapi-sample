@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_common_domain_suffixes",
+  "info": {
+    "displayName": "Domain Suffix",
+    "icon": "connector"
+  },
+  "options": {},
+  "attributes": {
+    "suffix": {
+      "type": "enumeration",
+      "required": true,
+      "default": "au",
+      "enum": [
+        "au",
+        "nz"
+      ]
+    }
+  },
+  "config": {}
+}
