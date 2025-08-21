@@ -60,6 +60,9 @@
           ]
         }
       }
+    },
+    "ctaID": {
+      "type": "string"
     }
   },
   "config": {}

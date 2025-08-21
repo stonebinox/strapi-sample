@@ -22,7 +22,7 @@
     },
     "ctaID": {
       "type": "string",
-      "unique": true
+      "unique": false
     },
     "ctaUrl": {
       "type": "string",
@@ -37,7 +37,7 @@
     },
     "secondaryCtaID": {
       "type": "string",
-      "unique": true
+      "unique": false
     }
   },
   "config": {}

@@ -7,13 +7,13 @@ export interface CommonCtaCallout extends Struct.ComponentSchema {
     icon: 'cursor';
   };
   attributes: {
-    ctaID: Schema.Attribute.String & Schema.Attribute.Unique;
+    ctaID: Schema.Attribute.String;
     ctaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     ctaUrl: Schema.Attribute.String & Schema.Attribute.Required;
     heading: Schema.Attribute.Component<'common.heading', false> &
       Schema.Attribute.Required;
     richDescription: Schema.Attribute.RichText & Schema.Attribute.Required;
-    secondaryCtaID: Schema.Attribute.String & Schema.Attribute.Unique;
+    secondaryCtaID: Schema.Attribute.String;
     secondaryCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
     secondaryCtaUrl: Schema.Attribute.String;
   };
@@ -70,6 +70,7 @@ export interface CommonFeaturedBannerSplit extends Struct.ComponentSchema {
     icon: 'bulletList';
   };
   attributes: {
+    ctaID: Schema.Attribute.String;
     ctaLabel: Schema.Attribute.String;
     ctaLink: Schema.Attribute.String;
     description: Schema.Attribute.Component<'common.text-list', true> &
