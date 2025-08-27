@@ -550,6 +550,109 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiProvinceAuProvinceAu extends Struct.SingleTypeSchema {
+  collectionName: 'province_aus';
+  info: {
+    displayName: 'Province Page AU';
+    pluralName: 'province-aus';
+    singularName: 'province-au';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::province-au.province-au'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.testimonial',
+        'shared.testimonial-group',
+        'shared.hero-section',
+        'common.text-list',
+        'common.testimonial-banner',
+        'common.navigator',
+        'common.navigator-option',
+        'common.navigator-option-item',
+        'common.metadata',
+        'common.map',
+        'common.links',
+        'common.hero-with-testimonial',
+        'common.heading',
+        'common.footer',
+        'common.featured-banner',
+        'common.featured-banner-split',
+        'common.feature-banner-vertical-split',
+        'common.domain-suffix',
+        'common.cta-callout',
+        'common.free-block',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
+  collectionName: 'studio_page_aus';
+  info: {
+    displayName: 'Studio Page AU';
+    pluralName: 'studio-page-aus';
+    singularName: 'studio-page-au';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::studio-page-au.studio-page-au'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.testimonial',
+        'shared.testimonial-group',
+        'shared.hero-section',
+        'common.text-list',
+        'common.testimonial-banner',
+        'common.navigator',
+        'common.navigator-option',
+        'common.navigator-option-item',
+        'common.metadata',
+        'common.map',
+        'common.links',
+        'common.hero-with-testimonial',
+        'common.heading',
+        'common.free-block',
+        'common.featured-banner',
+        'common.featured-banner-split',
+        'common.feature-banner-vertical-split',
+        'common.domain-suffix',
+        'common.cta-callout',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiStudiosAuStudiosAu extends Struct.SingleTypeSchema {
   collectionName: 'studios_aus';
   info: {
@@ -1093,6 +1196,8 @@ declare module '@strapi/strapi' {
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::page.page': ApiPagePage;
+      'api::province-au.province-au': ApiProvinceAuProvinceAu;
+      'api::studio-page-au.studio-page-au': ApiStudioPageAuStudioPageAu;
       'api::studios-au.studios-au': ApiStudiosAuStudiosAu;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

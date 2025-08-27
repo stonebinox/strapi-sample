@@ -109,6 +109,17 @@ export interface CommonFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonFreeBlock extends Struct.ComponentSchema {
+  collectionName: 'components_common_free_blocks';
+  info: {
+    displayName: 'Free Block';
+    icon: 'command';
+  };
+  attributes: {
+    content: Schema.Attribute.RichText & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonHeading extends Struct.ComponentSchema {
   collectionName: 'components_common_headings';
   info: {
@@ -227,6 +238,7 @@ export interface CommonProvince extends Struct.ComponentSchema {
   };
   attributes: {
     domainSuffix: Schema.Attribute.Component<'common.domain-suffix', false>;
+    fullName: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     studios: Schema.Attribute.Component<'common.studio', true> &
@@ -363,6 +375,7 @@ declare module '@strapi/strapi' {
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
       'common.footer': CommonFooter;
+      'common.free-block': CommonFreeBlock;
       'common.heading': CommonHeading;
       'common.hero-with-testimonial': CommonHeroWithTestimonial;
       'common.links': CommonLinks;

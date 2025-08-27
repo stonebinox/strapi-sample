@@ -1,0 +1,41 @@
+{
+  "kind": "singleType",
+  "collectionName": "province_aus",
+  "info": {
+    "singularName": "province-au",
+    "pluralName": "province-aus",
+    "displayName": "Province Page AU"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.testimonial",
+        "shared.testimonial-group",
+        "shared.hero-section",
+        "common.text-list",
+        "common.testimonial-banner",
+        "common.navigator",
+        "common.navigator-option",
+        "common.navigator-option-item",
+        "common.metadata",
+        "common.map",
+        "common.links",
+        "common.hero-with-testimonial",
+        "common.heading",
+        "common.footer",
+        "common.featured-banner",
+        "common.featured-banner-split",
+        "common.feature-banner-vertical-split",
+        "common.domain-suffix",
+        "common.cta-callout",
+        "common.free-block"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_common_free_blocks",
+  "info": {
+    "displayName": "Free Block",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

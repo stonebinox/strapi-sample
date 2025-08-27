@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "studio_page_aus",
+  "info": {
+    "singularName": "studio-page-au",
+    "pluralName": "studio-page-aus",
+    "displayName": "Studio Page AU"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "shared.testimonial",
+        "shared.testimonial-group",
+        "shared.hero-section",
+        "common.text-list",
+        "common.testimonial-banner",
+        "common.navigator",
+        "common.navigator-option",
+        "common.navigator-option-item",
+        "common.metadata",
+        "common.map",
+        "common.links",
+        "common.hero-with-testimonial",
+        "common.heading",
+        "common.free-block",
+        "common.featured-banner",
+        "common.featured-banner-split",
+        "common.feature-banner-vertical-split",
+        "common.domain-suffix",
+        "common.cta-callout"
+      ],
+      "required": true
+    }
+  }
+}
