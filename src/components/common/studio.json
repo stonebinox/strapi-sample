@@ -10,6 +10,9 @@
       "type": "string",
       "required": true
     },
+    "customStatus": {
+      "type": "string"
+    },
     "address": {
       "type": "text",
       "required": true

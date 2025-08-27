@@ -242,6 +242,7 @@ export interface CommonStudio extends Struct.ComponentSchema {
   };
   attributes: {
     address: Schema.Attribute.Text & Schema.Attribute.Required;
+    customStatus: Schema.Attribute.String;
     domainSuffix: Schema.Attribute.Component<'common.domain-suffix', false>;
     hasOnSiteParking: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
