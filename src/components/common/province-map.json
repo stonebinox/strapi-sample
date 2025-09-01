@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_common_province_maps",
+  "info": {
+    "displayName": "Province Map",
+    "icon": "globe"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

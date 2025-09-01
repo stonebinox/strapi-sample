@@ -33,7 +33,8 @@
         "common.feature-banner-vertical-split",
         "common.domain-suffix",
         "common.cta-callout",
-        "common.free-block"
+        "common.free-block",
+        "common.province-map"
       ],
       "required": true
     }

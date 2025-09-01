@@ -593,6 +593,7 @@ export interface ApiProvinceAuProvinceAu extends Struct.SingleTypeSchema {
         'common.domain-suffix',
         'common.cta-callout',
         'common.free-block',
+        'common.province-map',
       ]
     > &
       Schema.Attribute.Required;

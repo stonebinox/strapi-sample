@@ -239,10 +239,31 @@ export interface CommonProvince extends Struct.ComponentSchema {
   attributes: {
     domainSuffix: Schema.Attribute.Component<'common.domain-suffix', false>;
     fullName: Schema.Attribute.String & Schema.Attribute.Required;
+    latitude: Schema.Attribute.String & Schema.Attribute.Required;
+    longitude: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     studios: Schema.Attribute.Component<'common.studio', true> &
       Schema.Attribute.Required;
+    zoomLevel: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 0;
+        },
+        number
+      >;
+  };
+}
+
+export interface CommonProvinceMap extends Struct.ComponentSchema {
+  collectionName: 'components_common_province_maps';
+  info: {
+    displayName: 'Province Map';
+    icon: 'globe';
+  };
+  attributes: {
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -385,6 +406,7 @@ declare module '@strapi/strapi' {
       'common.navigator-option': CommonNavigatorOption;
       'common.navigator-option-item': CommonNavigatorOptionItem;
       'common.province': CommonProvince;
+      'common.province-map': CommonProvinceMap;
       'common.studio': CommonStudio;
       'common.testimonial-banner': CommonTestimonialBanner;
       'common.text-list': CommonTextList;
