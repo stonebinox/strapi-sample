@@ -37,6 +37,12 @@
         "common.province-map"
       ],
       "required": true
+    },
+    "footer": {
+      "type": "component",
+      "component": "common.simple-footer",
+      "repeatable": false,
+      "required": true
     }
   }
 }

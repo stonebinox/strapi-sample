@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_common_cta_callout_studios",
+  "info": {
+    "displayName": "CTA Callout Studio",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "common.links",
+      "repeatable": false,
+      "required": true
+    },
+    "secondaryCta": {
+      "type": "component",
+      "component": "common.links",
+      "repeatable": false
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}

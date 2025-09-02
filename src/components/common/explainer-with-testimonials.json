@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_common_explainer_with_testimonials",
+  "info": {
+    "displayName": "Explainer With Testimonials",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "list": {
+      "type": "component",
+      "component": "common.text-list",
+      "repeatable": false,
+      "required": true
+    },
+    "primaryCta": {
+      "type": "component",
+      "component": "common.links",
+      "repeatable": false,
+      "required": true
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "shared.testimonial-group",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

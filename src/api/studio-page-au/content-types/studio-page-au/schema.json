@@ -32,8 +32,16 @@
         "common.featured-banner-split",
         "common.feature-banner-vertical-split",
         "common.domain-suffix",
-        "common.cta-callout"
+        "common.cta-callout",
+        "common.cta-callout-studio",
+        "common.explainer-with-testimonials"
       ],
+      "required": true
+    },
+    "footer": {
+      "type": "component",
+      "component": "common.simple-footer",
+      "repeatable": false,
       "required": true
     }
   }

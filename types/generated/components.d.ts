@@ -19,6 +19,26 @@ export interface CommonCtaCallout extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonCtaCalloutStudio extends Struct.ComponentSchema {
+  collectionName: 'components_common_cta_callout_studios';
+  info: {
+    displayName: 'CTA Callout Studio';
+    icon: 'bulletList';
+  };
+  attributes: {
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    primaryCta: Schema.Attribute.Component<'common.links', false> &
+      Schema.Attribute.Required;
+    secondaryCta: Schema.Attribute.Component<'common.links', false>;
+    subtitle: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonDomainSuffix extends Struct.ComponentSchema {
   collectionName: 'components_common_domain_suffixes';
   info: {
@@ -29,6 +49,28 @@ export interface CommonDomainSuffix extends Struct.ComponentSchema {
     suffix: Schema.Attribute.Enumeration<['au', 'nz']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'au'>;
+  };
+}
+
+export interface CommonExplainerWithTestimonials
+  extends Struct.ComponentSchema {
+  collectionName: 'components_common_explainer_with_testimonials';
+  info: {
+    displayName: 'Explainer With Testimonials';
+    icon: 'apps';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    list: Schema.Attribute.Component<'common.text-list', false> &
+      Schema.Attribute.Required;
+    primaryCta: Schema.Attribute.Component<'common.links', false> &
+      Schema.Attribute.Required;
+    testimonials: Schema.Attribute.Component<
+      'shared.testimonial-group',
+      false
+    > &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false>;
   };
 }
 
@@ -267,6 +309,18 @@ export interface CommonProvinceMap extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonSimpleFooter extends Struct.ComponentSchema {
+  collectionName: 'components_common_simple_footers';
+  info: {
+    displayName: 'Simple Footer';
+    icon: 'layer';
+  };
+  attributes: {
+    links: Schema.Attribute.Component<'common.links', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonStudio extends Struct.ComponentSchema {
   collectionName: 'components_common_studios';
   info: {
@@ -391,7 +445,9 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'common.cta-callout': CommonCtaCallout;
+      'common.cta-callout-studio': CommonCtaCalloutStudio;
       'common.domain-suffix': CommonDomainSuffix;
+      'common.explainer-with-testimonials': CommonExplainerWithTestimonials;
       'common.feature-banner-vertical-split': CommonFeatureBannerVerticalSplit;
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
@@ -407,6 +463,7 @@ declare module '@strapi/strapi' {
       'common.navigator-option-item': CommonNavigatorOptionItem;
       'common.province': CommonProvince;
       'common.province-map': CommonProvinceMap;
+      'common.simple-footer': CommonSimpleFooter;
       'common.studio': CommonStudio;
       'common.testimonial-banner': CommonTestimonialBanner;
       'common.text-list': CommonTextList;

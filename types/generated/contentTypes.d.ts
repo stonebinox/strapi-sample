@@ -564,6 +564,8 @@ export interface ApiProvinceAuProvinceAu extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'common.simple-footer', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -617,6 +619,8 @@ export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'common.simple-footer', false> &
+      Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -645,6 +649,8 @@ export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
         'common.feature-banner-vertical-split',
         'common.domain-suffix',
         'common.cta-callout',
+        'common.cta-callout-studio',
+        'common.explainer-with-testimonials',
       ]
     > &
       Schema.Attribute.Required;

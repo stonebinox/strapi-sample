@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_common_simple_footers",
+  "info": {
+    "displayName": "Simple Footer",
+    "icon": "layer"
+  },
+  "options": {},
+  "attributes": {
+    "links": {
+      "type": "component",
+      "component": "common.links",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
