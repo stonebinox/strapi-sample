@@ -651,6 +651,7 @@ export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
         'common.cta-callout',
         'common.cta-callout-studio',
         'common.explainer-with-testimonials',
+        'common.map-studio',
       ]
     > &
       Schema.Attribute.Required;

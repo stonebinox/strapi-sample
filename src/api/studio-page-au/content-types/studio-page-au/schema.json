@@ -34,7 +34,8 @@
         "common.domain-suffix",
         "common.cta-callout",
         "common.cta-callout-studio",
-        "common.explainer-with-testimonials"
+        "common.explainer-with-testimonials",
+        "common.map-studio"
       ],
       "required": true
     },

@@ -220,6 +220,22 @@ export interface CommonMap extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonMapStudio extends Struct.ComponentSchema {
+  collectionName: 'components_common_map_studios';
+  info: {
+    displayName: 'Map + Studio';
+    icon: 'clock';
+  };
+  attributes: {
+    contactTitle: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    locationTitle: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    studioTitle: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonMetadata extends Struct.ComponentSchema {
   collectionName: 'components_common_metadata';
   info: {
@@ -457,6 +473,7 @@ declare module '@strapi/strapi' {
       'common.hero-with-testimonial': CommonHeroWithTestimonial;
       'common.links': CommonLinks;
       'common.map': CommonMap;
+      'common.map-studio': CommonMapStudio;
       'common.metadata': CommonMetadata;
       'common.navigator': CommonNavigator;
       'common.navigator-option': CommonNavigatorOption;

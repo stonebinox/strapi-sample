@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_common_map_studios",
+  "info": {
+    "displayName": "Map + Studio",
+    "icon": "clock"
+  },
+  "options": {},
+  "attributes": {
+    "contactTitle": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "studioTitle": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "locationTitle": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}
