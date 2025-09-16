@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigation_aus",
+  "info": {
+    "singularName": "navigation-au",
+    "pluralName": "navigation-aus",
+    "displayName": "Navigation AU"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navigator": {
+      "type": "component",
+      "component": "common.navigator",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

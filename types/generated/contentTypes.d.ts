@@ -503,6 +503,35 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNavigationAuNavigationAu extends Struct.SingleTypeSchema {
+  collectionName: 'navigation_aus';
+  info: {
+    displayName: 'Navigation AU';
+    pluralName: 'navigation-aus';
+    singularName: 'navigation-au';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation-au.navigation-au'
+    > &
+      Schema.Attribute.Private;
+    navigator: Schema.Attribute.Component<'common.navigator', false> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -652,6 +681,7 @@ export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
         'common.cta-callout-studio',
         'common.explainer-with-testimonials',
         'common.map-studio',
+        'common.pricing-banner',
       ]
     > &
       Schema.Attribute.Required;
@@ -1203,6 +1233,7 @@ declare module '@strapi/strapi' {
       'api::about.about': ApiAboutAbout;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
+      'api::navigation-au.navigation-au': ApiNavigationAuNavigationAu;
       'api::page.page': ApiPagePage;
       'api::province-au.province-au': ApiProvinceAuProvinceAu;
       'api::studio-page-au.studio-page-au': ApiStudioPageAuStudioPageAu;

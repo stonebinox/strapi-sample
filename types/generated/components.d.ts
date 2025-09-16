@@ -288,6 +288,19 @@ export interface CommonNavigatorOptionItem extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonPricingBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_pricing_banners';
+  info: {
+    displayName: 'Pricing Banner';
+    icon: 'database';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    pricingSubtitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonProvince extends Struct.ComponentSchema {
   collectionName: 'components_common_provinces';
   info: {
@@ -478,6 +491,7 @@ declare module '@strapi/strapi' {
       'common.navigator': CommonNavigator;
       'common.navigator-option': CommonNavigatorOption;
       'common.navigator-option-item': CommonNavigatorOptionItem;
+      'common.pricing-banner': CommonPricingBanner;
       'common.province': CommonProvince;
       'common.province-map': CommonProvinceMap;
       'common.simple-footer': CommonSimpleFooter;
