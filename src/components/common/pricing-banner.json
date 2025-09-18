@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_common_pricing_banners",
+  "info": {
+    "displayName": "Pricing Banner",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "pricingSubtitle": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

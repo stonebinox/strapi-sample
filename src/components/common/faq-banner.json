@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_common_faq_banners",
+  "info": {
+    "displayName": "FAQ Banner",
+    "icon": "pin"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false
+    },
+    "faqBlock": {
+      "type": "component",
+      "component": "common.faq-block",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

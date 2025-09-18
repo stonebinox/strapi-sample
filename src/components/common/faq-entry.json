@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_common_faq_entries",
+  "info": {
+    "displayName": "FAQ Entry",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

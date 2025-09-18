@@ -74,6 +74,44 @@ export interface CommonExplainerWithTestimonials
   };
 }
 
+export interface CommonFaqBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_faq_banners';
+  info: {
+    displayName: 'FAQ Banner';
+    icon: 'pin';
+  };
+  attributes: {
+    faqBlock: Schema.Attribute.Component<'common.faq-block', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false>;
+  };
+}
+
+export interface CommonFaqBlock extends Struct.ComponentSchema {
+  collectionName: 'components_common_faq_blocks';
+  info: {
+    displayName: 'FAQ Block';
+    icon: 'server';
+  };
+  attributes: {
+    faqEntry: Schema.Attribute.Component<'common.faq-entry', true> &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CommonFaqEntry extends Struct.ComponentSchema {
+  collectionName: 'components_common_faq_entries';
+  info: {
+    displayName: 'FAQ Entry';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonFeatureBannerVerticalSplit
   extends Struct.ComponentSchema {
   collectionName: 'components_common_feature_banner_vertical_splits';
@@ -288,6 +326,19 @@ export interface CommonNavigatorOptionItem extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonPricingBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_pricing_banners';
+  info: {
+    displayName: 'Pricing Banner';
+    icon: 'database';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    pricingSubtitle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonProvince extends Struct.ComponentSchema {
   collectionName: 'components_common_provinces';
   info: {
@@ -464,6 +515,9 @@ declare module '@strapi/strapi' {
       'common.cta-callout-studio': CommonCtaCalloutStudio;
       'common.domain-suffix': CommonDomainSuffix;
       'common.explainer-with-testimonials': CommonExplainerWithTestimonials;
+      'common.faq-banner': CommonFaqBanner;
+      'common.faq-block': CommonFaqBlock;
+      'common.faq-entry': CommonFaqEntry;
       'common.feature-banner-vertical-split': CommonFeatureBannerVerticalSplit;
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
@@ -478,6 +532,7 @@ declare module '@strapi/strapi' {
       'common.navigator': CommonNavigator;
       'common.navigator-option': CommonNavigatorOption;
       'common.navigator-option-item': CommonNavigatorOptionItem;
+      'common.pricing-banner': CommonPricingBanner;
       'common.province': CommonProvince;
       'common.province-map': CommonProvinceMap;
       'common.simple-footer': CommonSimpleFooter;

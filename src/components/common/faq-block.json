@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_common_faq_blocks",
+  "info": {
+    "displayName": "FAQ Block",
+    "icon": "server"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "faqEntry": {
+      "type": "component",
+      "component": "common.faq-entry",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}
