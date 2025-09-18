@@ -568,6 +568,16 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'common.testimonial-banner',
         'common.map',
         'common.footer',
+        'common.text-list',
+        'common.pricing-banner',
+        'common.links',
+        'common.heading',
+        'common.free-block',
+        'common.explainer-with-testimonials',
+        'common.cta-callout-studio',
+        'common.faq-banner',
+        'common.faq-block',
+        'common.faq-entry',
       ]
     > &
       Schema.Attribute.Required;
