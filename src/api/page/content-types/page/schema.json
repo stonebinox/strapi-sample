@@ -53,7 +53,8 @@
         "common.cta-callout-studio",
         "common.faq-banner",
         "common.faq-block",
-        "common.faq-entry"
+        "common.faq-entry",
+        "common.form-banner"
       ],
       "required": true
     },

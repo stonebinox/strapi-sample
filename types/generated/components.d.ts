@@ -189,6 +189,20 @@ export interface CommonFooter extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonFormBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_form_banners';
+  info: {
+    displayName: 'Form Banner';
+    icon: 'pencil';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    formstackUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonFreeBlock extends Struct.ComponentSchema {
   collectionName: 'components_common_free_blocks';
   info: {
@@ -522,6 +536,7 @@ declare module '@strapi/strapi' {
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
       'common.footer': CommonFooter;
+      'common.form-banner': CommonFormBanner;
       'common.free-block': CommonFreeBlock;
       'common.heading': CommonHeading;
       'common.hero-with-testimonial': CommonHeroWithTestimonial;

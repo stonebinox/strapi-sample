@@ -578,6 +578,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'common.faq-banner',
         'common.faq-block',
         'common.faq-entry',
+        'common.form-banner',
       ]
     > &
       Schema.Attribute.Required;
@@ -692,6 +693,10 @@ export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
         'common.explainer-with-testimonials',
         'common.map-studio',
         'common.pricing-banner',
+        'common.form-banner',
+        'common.faq-banner',
+        'common.faq-block',
+        'common.faq-entry',
       ]
     > &
       Schema.Attribute.Required;

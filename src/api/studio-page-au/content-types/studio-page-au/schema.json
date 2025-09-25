@@ -36,7 +36,11 @@
         "common.cta-callout-studio",
         "common.explainer-with-testimonials",
         "common.map-studio",
-        "common.pricing-banner"
+        "common.pricing-banner",
+        "common.form-banner",
+        "common.faq-banner",
+        "common.faq-block",
+        "common.faq-entry"
       ],
       "required": true
     },
