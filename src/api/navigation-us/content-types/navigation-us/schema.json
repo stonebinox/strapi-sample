@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "navigation_uses",
+  "info": {
+    "singularName": "navigation-us",
+    "pluralName": "navigation-uses",
+    "displayName": "Navigation US"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navigator": {
+      "type": "component",
+      "component": "common.navigator",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "footer_uses",
+  "info": {
+    "singularName": "footer-us",
+    "pluralName": "footer-uses",
+    "displayName": "Footer US"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "footer": {
+      "type": "component",
+      "component": "common.footer",
+      "repeatable": false,
+      "required": true
+    }
+  }
+}

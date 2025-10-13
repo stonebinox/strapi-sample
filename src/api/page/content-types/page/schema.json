@@ -16,7 +16,8 @@
       "required": true,
       "enum": [
         "au",
-        "nz"
+        "nz",
+        "com"
       ]
     },
     "title": {

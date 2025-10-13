@@ -437,6 +437,35 @@ export interface ApiAboutAbout extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFooterUsFooterUs extends Struct.SingleTypeSchema {
+  collectionName: 'footer_uses';
+  info: {
+    displayName: 'Footer US';
+    pluralName: 'footer-uses';
+    singularName: 'footer-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'common.footer', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::footer-us.footer-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Struct.SingleTypeSchema {
   collectionName: 'footers';
   info: {
@@ -532,6 +561,35 @@ export interface ApiNavigationAuNavigationAu extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiNavigationUsNavigationUs extends Struct.SingleTypeSchema {
+  collectionName: 'navigation_uses';
+  info: {
+    displayName: 'Navigation US';
+    pluralName: 'navigation-uses';
+    singularName: 'navigation-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::navigation-us.navigation-us'
+    > &
+      Schema.Attribute.Private;
+    navigator: Schema.Attribute.Component<'common.navigator', false> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -547,7 +605,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    domainSuffix: Schema.Attribute.Enumeration<['au', 'nz']> &
+    domainSuffix: Schema.Attribute.Enumeration<['au', 'nz', 'com']> &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
@@ -1246,9 +1304,11 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about.about': ApiAboutAbout;
+      'api::footer-us.footer-us': ApiFooterUsFooterUs;
       'api::footer.footer': ApiFooterFooter;
       'api::global.global': ApiGlobalGlobal;
       'api::navigation-au.navigation-au': ApiNavigationAuNavigationAu;
+      'api::navigation-us.navigation-us': ApiNavigationUsNavigationUs;
       'api::page.page': ApiPagePage;
       'api::province-au.province-au': ApiProvinceAuProvinceAu;
       'api::studio-page-au.studio-page-au': ApiStudioPageAuStudioPageAu;
