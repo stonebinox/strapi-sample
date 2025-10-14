@@ -637,6 +637,10 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'common.faq-block',
         'common.faq-entry',
         'common.form-banner',
+        'common.two-column-banner',
+        'components.button',
+        'common.feature-text-with-testimonials',
+        'common.feature-image-with-testimonials',
       ]
     > &
       Schema.Attribute.Required;
@@ -782,6 +786,35 @@ export interface ApiStudiosAuStudiosAu extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::studios-au.studios-au'
+    > &
+      Schema.Attribute.Private;
+    provinces: Schema.Attribute.Component<'common.province', true> &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStudiosUsStudiosUs extends Struct.SingleTypeSchema {
+  collectionName: 'studios_uses';
+  info: {
+    displayName: 'Studios US';
+    pluralName: 'studios-uses';
+    singularName: 'studios-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::studios-us.studios-us'
     > &
       Schema.Attribute.Private;
     provinces: Schema.Attribute.Component<'common.province', true> &
@@ -1313,6 +1346,7 @@ declare module '@strapi/strapi' {
       'api::province-au.province-au': ApiProvinceAuProvinceAu;
       'api::studio-page-au.studio-page-au': ApiStudioPageAuStudioPageAu;
       'api::studios-au.studios-au': ApiStudiosAuStudiosAu;
+      'api::studios-us.studios-us': ApiStudiosUsStudiosUs;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

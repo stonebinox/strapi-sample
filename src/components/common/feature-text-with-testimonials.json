@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_common_feature_text_with_testimonials",
+  "info": {
+    "displayName": "Feature Text With Testimonials",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "row1Heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "row1Description": {
+      "type": "richtext",
+      "required": true
+    },
+    "row1Testimonial": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": false,
+      "required": true
+    },
+    "row2Testimonial": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": false,
+      "required": true
+    },
+    "row2Heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "row2Description": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

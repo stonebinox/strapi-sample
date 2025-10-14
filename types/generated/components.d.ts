@@ -14,7 +14,7 @@ export interface CommonCtaCallout extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     richDescription: Schema.Attribute.RichText & Schema.Attribute.Required;
     secondaryCtaID: Schema.Attribute.String;
-    secondaryCtaLabel: Schema.Attribute.String & Schema.Attribute.Required;
+    secondaryCtaLabel: Schema.Attribute.String;
     secondaryCtaUrl: Schema.Attribute.String;
   };
 }
@@ -46,7 +46,7 @@ export interface CommonDomainSuffix extends Struct.ComponentSchema {
     icon: 'connector';
   };
   attributes: {
-    suffix: Schema.Attribute.Enumeration<['au', 'nz']> &
+    suffix: Schema.Attribute.Enumeration<['au', 'nz', 'com']> &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'au'>;
   };
@@ -125,6 +125,43 @@ export interface CommonFeatureBannerVerticalSplit
     ctaLink: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
     title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface CommonFeatureImageWithTestimonials
+  extends Struct.ComponentSchema {
+  collectionName: 'components_common_feature_image_with_testimonials';
+  info: {
+    displayName: 'Feature Image With Testimonials';
+    icon: 'picture';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    testimonials: Schema.Attribute.Component<'shared.testimonial', true>;
+  };
+}
+
+export interface CommonFeatureTextWithTestimonials
+  extends Struct.ComponentSchema {
+  collectionName: 'components_common_feature_text_with_testimonials';
+  info: {
+    displayName: 'Feature Text With Testimonials';
+    icon: 'bulletList';
+  };
+  attributes: {
+    row1Description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    row1Heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    row1Testimonial: Schema.Attribute.Component<'shared.testimonial', false> &
+      Schema.Attribute.Required;
+    row2Description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    row2Heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    row2Testimonial: Schema.Attribute.Component<'shared.testimonial', false> &
       Schema.Attribute.Required;
   };
 }
@@ -451,6 +488,35 @@ export interface CommonTextList extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonTwoColumnBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_two_column_banners';
+  info: {
+    displayName: 'Two Column Banner';
+    icon: 'dashboard';
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'common.cta-callout', false> &
+      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface ComponentsButton extends Struct.ComponentSchema {
+  collectionName: 'components_components_buttons';
+  info: {
+    displayName: 'Button';
+    icon: 'command';
+  };
+  attributes: {
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    link: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#'>;
+    type: Schema.Attribute.Enumeration<['primary', 'secondary', 'disabled']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'secondary'>;
+  };
+}
+
 export interface SharedHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_sections';
   info: {
@@ -533,6 +599,8 @@ declare module '@strapi/strapi' {
       'common.faq-block': CommonFaqBlock;
       'common.faq-entry': CommonFaqEntry;
       'common.feature-banner-vertical-split': CommonFeatureBannerVerticalSplit;
+      'common.feature-image-with-testimonials': CommonFeatureImageWithTestimonials;
+      'common.feature-text-with-testimonials': CommonFeatureTextWithTestimonials;
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
       'common.footer': CommonFooter;
@@ -554,6 +622,8 @@ declare module '@strapi/strapi' {
       'common.studio': CommonStudio;
       'common.testimonial-banner': CommonTestimonialBanner;
       'common.text-list': CommonTextList;
+      'common.two-column-banner': CommonTwoColumnBanner;
+      'components.button': ComponentsButton;
       'shared.hero-section': SharedHeroSection;
       'shared.quote': SharedQuote;
       'shared.testimonial': SharedTestimonial;

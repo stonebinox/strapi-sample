@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_buttons",
+  "info": {
+    "displayName": "Button",
+    "icon": "command"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "default": "#"
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "secondary",
+      "enum": [
+        "primary",
+        "secondary",
+        "disabled"
+      ]
+    }
+  },
+  "config": {}
+}

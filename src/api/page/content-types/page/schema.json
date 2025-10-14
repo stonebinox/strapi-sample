@@ -55,7 +55,11 @@
         "common.faq-banner",
         "common.faq-block",
         "common.faq-entry",
-        "common.form-banner"
+        "common.form-banner",
+        "common.two-column-banner",
+        "components.button",
+        "common.feature-text-with-testimonials",
+        "common.feature-image-with-testimonials"
       ],
       "required": true
     },

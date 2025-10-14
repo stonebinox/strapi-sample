@@ -14,6 +14,7 @@ export default [
             "http://localhost:5173",
             "http://pronto.com.au:3000",
             "http://pronto.com.nz:3000",
+            "http://pronto.com:3000",
           ],
           "connect-src": ["'self'", "https:"],
           "img-src": [

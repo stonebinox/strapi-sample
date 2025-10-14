@@ -73,6 +73,7 @@ export default ({ env }) => {
           "http://localhost:3000",
           "http://pronto.com.au:3000",
           "http://pronto.com.nz:3000",
+          "http://pronto.com:3000",
           "https://pp-landing.netlify.app", // for au region
           "https://pp-landing-nz.netlify.app", // for nz region
         ], // we edit these depending on when we edit stuff
@@ -94,8 +95,12 @@ export default ({ env }) => {
           const resolved = getSuffix(suffix);
 
           // If running locally, resolved will be 'au' or 'nz', so use clientBase as base
-          if (resolved === "au" || resolved === "nz") {
-            clientUrl = `${clientBase}.${resolved}`;
+          if (resolved === "au" || resolved === "nz" || resolved === "com") {
+            if (resolved === "com") {
+              clientUrl = `${clientBase}`;
+            } else {
+              clientUrl = `${clientBase}.${resolved}`;
+            }
 
             if (clientPort) {
               clientUrl += `:${clientPort}`;

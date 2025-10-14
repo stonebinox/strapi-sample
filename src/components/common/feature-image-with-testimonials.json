@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_common_feature_image_with_testimonials",
+  "info": {
+    "displayName": "Feature Image With Testimonials",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": true,
+      "required": false
+    }
+  },
+  "config": {}
+}

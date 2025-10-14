@@ -12,7 +12,8 @@
       "default": "au",
       "enum": [
         "au",
-        "nz"
+        "nz",
+        "com"
       ]
     }
   },

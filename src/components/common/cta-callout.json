@@ -30,7 +30,7 @@
     },
     "secondaryCtaLabel": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "secondaryCtaUrl": {
       "type": "string"

@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_common_two_column_banners",
+  "info": {
+    "displayName": "Two Column Banner",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "content": {
+      "type": "component",
+      "component": "common.cta-callout",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}
