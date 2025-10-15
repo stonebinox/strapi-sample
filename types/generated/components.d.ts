@@ -251,6 +251,20 @@ export interface CommonFreeBlock extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonFreeBlockWithImagesBanner
+  extends Struct.ComponentSchema {
+  collectionName: 'components_common_free_block_with_images_banners';
+  info: {
+    displayName: 'Free Block With Images Banner';
+    icon: 'landscape';
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'common.free-block', false> &
+      Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonHeading extends Struct.ComponentSchema {
   collectionName: 'components_common_headings';
   info: {
@@ -606,6 +620,7 @@ declare module '@strapi/strapi' {
       'common.footer': CommonFooter;
       'common.form-banner': CommonFormBanner;
       'common.free-block': CommonFreeBlock;
+      'common.free-block-with-images-banner': CommonFreeBlockWithImagesBanner;
       'common.heading': CommonHeading;
       'common.hero-with-testimonial': CommonHeroWithTestimonial;
       'common.links': CommonLinks;

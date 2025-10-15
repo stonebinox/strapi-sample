@@ -59,7 +59,8 @@
         "common.two-column-banner",
         "components.button",
         "common.feature-text-with-testimonials",
-        "common.feature-image-with-testimonials"
+        "common.feature-image-with-testimonials",
+        "common.free-block-with-images-banner"
       ],
       "required": true
     },
