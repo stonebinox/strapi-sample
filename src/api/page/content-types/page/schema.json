@@ -66,6 +66,11 @@
     },
     "additionalCSS": {
       "type": "text"
+    },
+    "metadata": {
+      "type": "component",
+      "component": "common.metadata",
+      "repeatable": false
     }
   }
 }

@@ -346,8 +346,30 @@ export interface CommonMetadata extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    keywords: Schema.Attribute.Text & Schema.Attribute.Required;
-    pageTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Discover Pronto Pilates \u2014 a premium reformer Pilates studio with expert-led on-screen classes, 23 daily sessions, and affordable memberships designed to fit your lifestyle.'>;
+    googleBotFollow: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    googleBotIndex: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    googleVerificationCode: Schema.Attribute.String;
+    keywords: Schema.Attribute.Text;
+    openGraphDescription: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Discover Pronto Pilates \u2014 a premium reformer Pilates studio with expert-led on-screen classes, 23 daily sessions, and affordable memberships designed to fit your lifestyle.'>;
+    openGraphImage: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'https://doc.vortala.com/childsites/uploads/4608/files/yelp-logo1.jpg'>;
+    openGraphImageHeight: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'250'>;
+    openGraphImageWidth: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'250'>;
+    openGraphTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Pronto Pilates'>;
+    openGraphType: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'website'>;
+    pageTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Pronto Pilates'>;
+    robotsFollow: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    robotsIndex: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    siteName: Schema.Attribute.String;
   };
 }
 

@@ -8,11 +8,62 @@
   "attributes": {
     "pageTitle": {
       "type": "string",
-      "required": true
+      "default": "Pronto Pilates",
+      "required": false
     },
     "keywords": {
       "type": "text",
-      "required": true
+      "required": false
+    },
+    "openGraphType": {
+      "type": "string",
+      "default": "website"
+    },
+    "description": {
+      "type": "text",
+      "default": "Discover Pronto Pilates — a premium reformer Pilates studio with expert-led on-screen classes, 23 daily sessions, and affordable memberships designed to fit your lifestyle."
+    },
+    "openGraphImage": {
+      "type": "string",
+      "default": "https://doc.vortala.com/childsites/uploads/4608/files/yelp-logo1.jpg"
+    },
+    "openGraphImageWidth": {
+      "type": "string",
+      "default": "250"
+    },
+    "openGraphImageHeight": {
+      "type": "string",
+      "default": "250"
+    },
+    "openGraphTitle": {
+      "type": "string",
+      "default": "Pronto Pilates"
+    },
+    "openGraphDescription": {
+      "type": "text",
+      "default": "Discover Pronto Pilates — a premium reformer Pilates studio with expert-led on-screen classes, 23 daily sessions, and affordable memberships designed to fit your lifestyle."
+    },
+    "siteName": {
+      "type": "string"
+    },
+    "robotsIndex": {
+      "type": "boolean",
+      "default": true
+    },
+    "robotsFollow": {
+      "type": "boolean",
+      "default": true
+    },
+    "googleBotIndex": {
+      "type": "boolean",
+      "default": true
+    },
+    "googleBotFollow": {
+      "type": "boolean",
+      "default": true
+    },
+    "googleVerificationCode": {
+      "type": "string"
     }
   },
   "config": {}
