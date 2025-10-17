@@ -39,6 +39,36 @@ export interface CommonCtaCalloutStudio extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonDescriptionWithTestimonial
+  extends Struct.ComponentSchema {
+  collectionName: 'components_common_description_with_testimonials';
+  info: {
+    displayName: 'Description With Testimonial';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    testimonial: Schema.Attribute.Component<'shared.testimonial', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface CommonDescriptionWithVideo extends Struct.ComponentSchema {
+  collectionName: 'components_common_description_with_videos';
+  info: {
+    displayName: 'Description With Video';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    media: Schema.Attribute.Media<'videos'> & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonDomainSuffix extends Struct.ComponentSchema {
   collectionName: 'components_common_domain_suffixes';
   info: {
@@ -109,6 +139,23 @@ export interface CommonFaqEntry extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.RichText & Schema.Attribute.Required;
     question: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface CommonFaqWithTestimonials extends Struct.ComponentSchema {
+  collectionName: 'components_common_faq_with_testimonials';
+  info: {
+    displayName: 'FAQ With Testimonials';
+    icon: 'filter';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    faqs: Schema.Attribute.Component<'common.faq-entry', true> &
+      Schema.Attribute.Required;
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    testimonials: Schema.Attribute.Component<'shared.testimonial', true> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -655,11 +702,14 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'common.cta-callout': CommonCtaCallout;
       'common.cta-callout-studio': CommonCtaCalloutStudio;
+      'common.description-with-testimonial': CommonDescriptionWithTestimonial;
+      'common.description-with-video': CommonDescriptionWithVideo;
       'common.domain-suffix': CommonDomainSuffix;
       'common.explainer-with-testimonials': CommonExplainerWithTestimonials;
       'common.faq-banner': CommonFaqBanner;
       'common.faq-block': CommonFaqBlock;
       'common.faq-entry': CommonFaqEntry;
+      'common.faq-with-testimonials': CommonFaqWithTestimonials;
       'common.feature-banner-vertical-split': CommonFeatureBannerVerticalSplit;
       'common.feature-image-with-testimonials': CommonFeatureImageWithTestimonials;
       'common.feature-text-with-testimonials': CommonFeatureTextWithTestimonials;

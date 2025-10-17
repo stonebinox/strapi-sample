@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_common_faq_with_testimonials",
+  "info": {
+    "displayName": "FAQ With Testimonials",
+    "icon": "filter"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "faqs": {
+      "type": "component",
+      "component": "common.faq-entry",
+      "repeatable": true,
+      "required": true
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

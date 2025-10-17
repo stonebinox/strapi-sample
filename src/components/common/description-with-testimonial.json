@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_common_description_with_testimonials",
+  "info": {
+    "displayName": "Description With Testimonial",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "testimonial": {
+      "type": "component",
+      "component": "shared.testimonial",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}
