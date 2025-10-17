@@ -292,6 +292,20 @@ export interface CommonHeroWithTestimonial extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonImageSlideshowWithTextBanner
+  extends Struct.ComponentSchema {
+  collectionName: 'components_common_image_slideshow_with_text_banners';
+  info: {
+    displayName: 'Image Slideshow With Text Banner';
+    icon: 'landscape';
+  };
+  attributes: {
+    content: Schema.Attribute.Component<'common.free-block', false> &
+      Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+  };
+}
+
 export interface CommonLinks extends Struct.ComponentSchema {
   collectionName: 'components_common_links';
   info: {
@@ -623,6 +637,7 @@ declare module '@strapi/strapi' {
       'common.free-block-with-images-banner': CommonFreeBlockWithImagesBanner;
       'common.heading': CommonHeading;
       'common.hero-with-testimonial': CommonHeroWithTestimonial;
+      'common.image-slideshow-with-text-banner': CommonImageSlideshowWithTextBanner;
       'common.links': CommonLinks;
       'common.map': CommonMap;
       'common.map-studio': CommonMapStudio;

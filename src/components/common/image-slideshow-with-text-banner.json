@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_common_image_slideshow_with_text_banners",
+  "info": {
+    "displayName": "Image Slideshow With Text Banner",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "component": "common.free-block",
+      "repeatable": false,
+      "required": true
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
