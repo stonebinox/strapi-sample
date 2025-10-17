@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_common_two_video_row_banners",
+  "info": {
+    "displayName": "Two Video Row Banner",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false
+    },
+    "videos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "videos"
+      ]
+    }
+  },
+  "config": {}
+}

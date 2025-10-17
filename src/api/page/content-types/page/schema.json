@@ -61,7 +61,8 @@
         "common.feature-text-with-testimonials",
         "common.feature-image-with-testimonials",
         "common.free-block-with-images-banner",
-        "common.image-slideshow-with-text-banner"
+        "common.image-slideshow-with-text-banner",
+        "common.two-video-row-banner"
       ],
       "required": true
     },

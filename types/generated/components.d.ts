@@ -552,6 +552,18 @@ export interface CommonTwoColumnBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonTwoVideoRowBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_two_video_row_banners';
+  info: {
+    displayName: 'Two Video Row Banner';
+    icon: 'landscape';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'common.heading', false>;
+    videos: Schema.Attribute.Media<'videos', true> & Schema.Attribute.Required;
+  };
+}
+
 export interface ComponentsButton extends Struct.ComponentSchema {
   collectionName: 'components_components_buttons';
   info: {
@@ -675,6 +687,7 @@ declare module '@strapi/strapi' {
       'common.testimonial-banner': CommonTestimonialBanner;
       'common.text-list': CommonTextList;
       'common.two-column-banner': CommonTwoColumnBanner;
+      'common.two-video-row-banner': CommonTwoVideoRowBanner;
       'components.button': ComponentsButton;
       'shared.hero-section': SharedHeroSection;
       'shared.quote': SharedQuote;
