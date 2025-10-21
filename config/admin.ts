@@ -79,7 +79,7 @@ export default ({ env }) => {
           "http://pronto.com:3000",
           "https://pp-landing.netlify.app", // for au region
           "https://pp-landing-nz.netlify.app", // for nz region
-          "https://pp-landing-us.netlify.app", // for nz region
+          "https://pp-landing-us.netlify.app", // for us region
         ], // we edit these depending on when we edit stuff
         async handler(uid, { documentId, locale, status }) {
           // Fetch the complete document from Strapi
