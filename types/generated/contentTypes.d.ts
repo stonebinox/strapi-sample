@@ -794,6 +794,9 @@ export interface ApiProvincePageUsProvincePageUs
         'common.description-with-video',
         'common.description-with-testimonial',
         'common.cta-callout',
+        'common.text-list-with-description',
+        'common.image-list-banner',
+        'common.feature-list-banner',
       ]
     > &
       Schema.Attribute.Required;
@@ -926,6 +929,10 @@ export interface ApiStudioPageUsStudioPageUs extends Struct.SingleTypeSchema {
         'common.cta-callout',
         'common.cta-callout-studio',
         'common.pricing-banner',
+        'common.text-list-with-description',
+        'common.image-list-banner',
+        'common.feature-list-banner',
+        'common.class-table-banner',
       ]
     > &
       Schema.Attribute.Required;
