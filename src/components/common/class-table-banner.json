@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_class_table_banners",
+  "info": {
+    "displayName": "Class Table Banner",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
