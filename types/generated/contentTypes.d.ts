@@ -922,6 +922,7 @@ export interface ApiStudioPageUsStudioPageUs extends Struct.SingleTypeSchema {
         'common.description-with-testimonial',
         'common.cta-callout',
         'common.cta-callout-studio',
+        'common.pricing-banner',
       ]
     > &
       Schema.Attribute.Required;
