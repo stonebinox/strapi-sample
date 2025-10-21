@@ -705,6 +705,92 @@ export interface ApiProvinceAuProvinceAu extends Struct.SingleTypeSchema {
         'common.cta-callout',
         'common.free-block',
         'common.province-map',
+        'components.button',
+        'common.two-video-row-banner',
+        'common.two-column-banner',
+        'common.pricing-banner',
+        'common.image-slideshow-with-text-banner',
+        'common.free-block-with-images-banner',
+        'common.form-banner',
+        'common.feature-text-with-testimonials',
+        'common.feature-image-with-testimonials',
+        'common.faq-entry',
+        'common.faq-with-testimonials',
+        'common.faq-block',
+        'common.faq-banner',
+        'common.explainer-with-testimonials',
+        'common.description-with-video',
+        'common.description-with-testimonial',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiProvincePageUsProvincePageUs
+  extends Struct.SingleTypeSchema {
+  collectionName: 'province_page_uses';
+  info: {
+    displayName: 'Province Page US';
+    pluralName: 'province-page-uses';
+    singularName: 'province-page-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'common.simple-footer', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::province-page-us.province-page-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.testimonial',
+        'shared.testimonial-group',
+        'components.button',
+        'common.two-video-row-banner',
+        'common.two-column-banner',
+        'common.text-list',
+        'shared.hero-section',
+        'common.testimonial-banner',
+        'common.province-map',
+        'common.navigator',
+        'common.navigator-option',
+        'common.navigator-option-item',
+        'common.metadata',
+        'common.map',
+        'common.links',
+        'common.image-slideshow-with-text-banner',
+        'common.hero-with-testimonial',
+        'common.heading',
+        'common.free-block',
+        'common.free-block-with-images-banner',
+        'common.form-banner',
+        'common.footer',
+        'common.featured-banner',
+        'common.featured-banner-split',
+        'common.feature-text-with-testimonials',
+        'common.feature-image-with-testimonials',
+        'common.feature-banner-vertical-split',
+        'common.faq-with-testimonials',
+        'common.faq-entry',
+        'common.faq-block',
+        'common.faq-banner',
+        'common.explainer-with-testimonials',
+        'common.description-with-video',
+        'common.description-with-testimonial',
+        'common.cta-callout',
       ]
     > &
       Schema.Attribute.Required;
@@ -766,6 +852,76 @@ export interface ApiStudioPageAuStudioPageAu extends Struct.SingleTypeSchema {
         'common.faq-banner',
         'common.faq-block',
         'common.faq-entry',
+      ]
+    > &
+      Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiStudioPageUsStudioPageUs extends Struct.SingleTypeSchema {
+  collectionName: 'studio_page_uses';
+  info: {
+    displayName: 'Studio Page US';
+    pluralName: 'studio-page-uses';
+    singularName: 'studio-page-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'common.simple-footer', false> &
+      Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::studio-page-us.studio-page-us'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.testimonial',
+        'shared.testimonial-group',
+        'shared.hero-section',
+        'components.button',
+        'common.two-video-row-banner',
+        'common.two-column-banner',
+        'common.text-list',
+        'common.testimonial-banner',
+        'common.navigator',
+        'common.navigator-option',
+        'common.navigator-option-item',
+        'common.metadata',
+        'common.map',
+        'common.map-studio',
+        'common.links',
+        'common.hero-with-testimonial',
+        'common.heading',
+        'common.free-block',
+        'common.image-slideshow-with-text-banner',
+        'common.free-block-with-images-banner',
+        'common.form-banner',
+        'common.featured-banner',
+        'common.featured-banner-split',
+        'common.feature-text-with-testimonials',
+        'common.feature-image-with-testimonials',
+        'common.feature-banner-vertical-split',
+        'common.faq-with-testimonials',
+        'common.faq-entry',
+        'common.faq-block',
+        'common.faq-banner',
+        'common.explainer-with-testimonials',
+        'common.domain-suffix',
+        'common.description-with-video',
+        'common.description-with-testimonial',
+        'common.cta-callout',
+        'common.cta-callout-studio',
       ]
     > &
       Schema.Attribute.Required;
@@ -1351,7 +1507,9 @@ declare module '@strapi/strapi' {
       'api::navigation-us.navigation-us': ApiNavigationUsNavigationUs;
       'api::page.page': ApiPagePage;
       'api::province-au.province-au': ApiProvinceAuProvinceAu;
+      'api::province-page-us.province-page-us': ApiProvincePageUsProvincePageUs;
       'api::studio-page-au.studio-page-au': ApiStudioPageAuStudioPageAu;
+      'api::studio-page-us.studio-page-us': ApiStudioPageUsStudioPageUs;
       'api::studios-au.studios-au': ApiStudiosAuStudiosAu;
       'api::studios-us.studios-us': ApiStudiosUsStudiosUs;
       'plugin::content-releases.release': PluginContentReleasesRelease;
