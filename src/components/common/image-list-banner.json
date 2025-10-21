@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_common_image_list_banners",
+  "info": {
+    "displayName": "Image List Banner",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}
