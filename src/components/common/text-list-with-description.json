@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_common_text_list_with_descriptions",
+  "info": {
+    "displayName": "Text List With Description",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    }
+  },
+  "config": {}
+}

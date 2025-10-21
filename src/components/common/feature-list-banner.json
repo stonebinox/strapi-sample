@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_common_feature_list_banners",
+  "info": {
+    "displayName": "Feature List Banner",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "features": {
+      "type": "component",
+      "component": "common.text-list-with-description",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

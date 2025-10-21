@@ -192,6 +192,24 @@ export interface CommonFeatureImageWithTestimonials
   };
 }
 
+export interface CommonFeatureListBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_feature_list_banners';
+  info: {
+    displayName: 'Feature List Banner';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    features: Schema.Attribute.Component<
+      'common.text-list-with-description',
+      true
+    > &
+      Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonFeatureTextWithTestimonials
   extends Struct.ComponentSchema {
   collectionName: 'components_common_feature_text_with_testimonials';
@@ -585,6 +603,18 @@ export interface CommonTextList extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonTextListWithDescription extends Struct.ComponentSchema {
+  collectionName: 'components_common_text_list_with_descriptions';
+  info: {
+    displayName: 'Text List With Description';
+    icon: 'bulletList';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    title: Schema.Attribute.Component<'common.heading', false>;
+  };
+}
+
 export interface CommonTwoColumnBanner extends Struct.ComponentSchema {
   collectionName: 'components_common_two_column_banners';
   info: {
@@ -712,6 +742,7 @@ declare module '@strapi/strapi' {
       'common.faq-with-testimonials': CommonFaqWithTestimonials;
       'common.feature-banner-vertical-split': CommonFeatureBannerVerticalSplit;
       'common.feature-image-with-testimonials': CommonFeatureImageWithTestimonials;
+      'common.feature-list-banner': CommonFeatureListBanner;
       'common.feature-text-with-testimonials': CommonFeatureTextWithTestimonials;
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
@@ -736,6 +767,7 @@ declare module '@strapi/strapi' {
       'common.studio': CommonStudio;
       'common.testimonial-banner': CommonTestimonialBanner;
       'common.text-list': CommonTextList;
+      'common.text-list-with-description': CommonTextListWithDescription;
       'common.two-column-banner': CommonTwoColumnBanner;
       'common.two-video-row-banner': CommonTwoVideoRowBanner;
       'components.button': ComponentsButton;

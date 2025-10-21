@@ -648,6 +648,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'common.description-with-video',
         'common.description-with-testimonial',
         'common.faq-with-testimonials',
+        'common.feature-list-banner',
       ]
     > &
       Schema.Attribute.Required;

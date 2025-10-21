@@ -65,7 +65,8 @@
         "common.two-video-row-banner",
         "common.description-with-video",
         "common.description-with-testimonial",
-        "common.faq-with-testimonials"
+        "common.faq-with-testimonials",
+        "common.feature-list-banner"
       ],
       "required": true
     },
