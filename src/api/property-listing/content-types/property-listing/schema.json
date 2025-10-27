@@ -1,0 +1,162 @@
+{
+  "kind": "singleType",
+  "collectionName": "property_listings",
+  "info": {
+    "singularName": "property-listing",
+    "pluralName": "property-listings",
+    "displayName": "Property Listing"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "propertySlug": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "realEstateLink": {
+      "type": "string"
+    },
+    "handoverDate": {
+      "type": "date"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "price": {
+      "type": "string",
+      "required": true
+    },
+    "projectAnnualProfit": {
+      "type": "string",
+      "required": true
+    },
+    "annualRent": {
+      "type": "string",
+      "required": true
+    },
+    "leaseTermRenewal": {
+      "type": "string",
+      "required": true
+    },
+    "rentReview": {
+      "type": "string",
+      "required": true
+    },
+    "propertySecurity": {
+      "type": "string",
+      "required": true
+    },
+    "priceIncreaseDate": {
+      "type": "date"
+    },
+    "priceIncreaseTime": {
+      "type": "time",
+      "required": true
+    },
+    "addGSTPrice": {
+      "type": "boolean",
+      "default": false
+    },
+    "additionalDetails": {
+      "type": "richtext",
+      "required": true
+    },
+    "squareMeters": {
+      "type": "decimal"
+    },
+    "startingReformers": {
+      "type": "integer"
+    },
+    "reformerCapacity": {
+      "type": "integer",
+      "required": true
+    },
+    "parking": {
+      "type": "string",
+      "required": true
+    },
+    "restrooms": {
+      "type": "string"
+    },
+    "airConditioner": {
+      "type": "string"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "region": {
+      "type": "component",
+      "component": "common.domain-suffix",
+      "repeatable": false
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "propertyStatus": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "None",
+        "Pronto Leased",
+        "New Listing",
+        "Established Studio"
+      ]
+    },
+    "visibility": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Public",
+        "Password Protected",
+        "Private"
+      ]
+    },
+    "publishedOn": {
+      "type": "datetime",
+      "required": true
+    },
+    "availability": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Lease Available",
+        "Lease Available for Transfer",
+        "Under Contract",
+        "Sale Pending",
+        "Sold"
+      ]
+    },
+    "stage": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "None",
+        "Pronto Leased",
+        "New Listing",
+        "Established Studio"
+      ]
+    },
+    "privateListing": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}
