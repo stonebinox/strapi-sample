@@ -753,7 +753,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
   };
   attributes: {
     addGSTPrice: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    additionalDetails: Schema.Attribute.RichText & Schema.Attribute.Required;
+    additionalDetails: Schema.Attribute.RichText;
     address: Schema.Attribute.Text & Schema.Attribute.Required;
     airConditioner: Schema.Attribute.String;
     annualRent: Schema.Attribute.String & Schema.Attribute.Required;
@@ -780,7 +780,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String & Schema.Attribute.Required;
-    parking: Schema.Attribute.String & Schema.Attribute.Required;
+    parking: Schema.Attribute.String;
     photos: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     price: Schema.Attribute.String & Schema.Attribute.Required;
     priceIncreaseDate: Schema.Attribute.Date;
@@ -789,7 +789,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
     projectAnnualProfit: Schema.Attribute.String & Schema.Attribute.Required;
-    propertySecurity: Schema.Attribute.String & Schema.Attribute.Required;
+    propertySecurity: Schema.Attribute.String;
     propertySlug: Schema.Attribute.String & Schema.Attribute.Required;
     propertyStatus: Schema.Attribute.Enumeration<
       ['None', 'Pronto Leased', 'New Listing', 'Established Studio']

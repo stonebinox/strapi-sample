@@ -55,7 +55,7 @@
     },
     "propertySecurity": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "priceIncreaseDate": {
       "type": "date"
@@ -70,7 +70,7 @@
     },
     "additionalDetails": {
       "type": "richtext",
-      "required": true
+      "required": false
     },
     "squareMeters": {
       "type": "decimal"
@@ -84,7 +84,7 @@
     },
     "parking": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "restrooms": {
       "type": "string"
