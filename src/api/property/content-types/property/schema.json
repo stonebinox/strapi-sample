@@ -62,7 +62,7 @@
     },
     "priceIncreaseTime": {
       "type": "time",
-      "required": true
+      "required": false
     },
     "addGSTPrice": {
       "type": "boolean",

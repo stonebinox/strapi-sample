@@ -784,7 +784,7 @@ export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
     photos: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
     price: Schema.Attribute.String & Schema.Attribute.Required;
     priceIncreaseDate: Schema.Attribute.Date;
-    priceIncreaseTime: Schema.Attribute.Time & Schema.Attribute.Required;
+    priceIncreaseTime: Schema.Attribute.Time;
     privateListing: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
