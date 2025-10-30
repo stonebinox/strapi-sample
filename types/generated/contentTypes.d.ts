@@ -741,6 +741,84 @@ export interface ApiPropertyListingPropertyListing
   };
 }
 
+export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
+  collectionName: 'properties';
+  info: {
+    displayName: 'Property';
+    pluralName: 'properties';
+    singularName: 'property';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    addGSTPrice: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    additionalDetails: Schema.Attribute.RichText & Schema.Attribute.Required;
+    address: Schema.Attribute.Text & Schema.Attribute.Required;
+    airConditioner: Schema.Attribute.String;
+    annualRent: Schema.Attribute.String & Schema.Attribute.Required;
+    availability: Schema.Attribute.Enumeration<
+      [
+        'Lease Available',
+        'Lease Available for Transfer',
+        'Under Contract',
+        'Sale Pending',
+        'Sold',
+      ]
+    > &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    description: Schema.Attribute.RichText & Schema.Attribute.Required;
+    handoverDate: Schema.Attribute.Date;
+    leaseTermRenewal: Schema.Attribute.String & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::property.property'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    parking: Schema.Attribute.String & Schema.Attribute.Required;
+    photos: Schema.Attribute.Media<'images', true> & Schema.Attribute.Required;
+    price: Schema.Attribute.String & Schema.Attribute.Required;
+    priceIncreaseDate: Schema.Attribute.Date;
+    priceIncreaseTime: Schema.Attribute.Time & Schema.Attribute.Required;
+    privateListing: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    projectAnnualProfit: Schema.Attribute.String & Schema.Attribute.Required;
+    propertySecurity: Schema.Attribute.String & Schema.Attribute.Required;
+    propertySlug: Schema.Attribute.String & Schema.Attribute.Required;
+    propertyStatus: Schema.Attribute.Enumeration<
+      ['None', 'Pronto Leased', 'New Listing', 'Established Studio']
+    > &
+      Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    publishedOn: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    realEstateLink: Schema.Attribute.String;
+    reformerCapacity: Schema.Attribute.Integer & Schema.Attribute.Required;
+    region: Schema.Attribute.Component<'common.domain-suffix', false>;
+    rentReview: Schema.Attribute.String & Schema.Attribute.Required;
+    restrooms: Schema.Attribute.String;
+    squareMeters: Schema.Attribute.Decimal;
+    stage: Schema.Attribute.Enumeration<
+      ['None', 'Pronto Leased', 'New Listing', 'Established Studio']
+    > &
+      Schema.Attribute.Required;
+    startingReformers: Schema.Attribute.Integer;
+    state: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    visibility: Schema.Attribute.Enumeration<
+      ['Public', 'Password Protected', 'Private']
+    > &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface ApiProvinceAuProvinceAu extends Struct.SingleTypeSchema {
   collectionName: 'province_aus';
   info: {
@@ -1597,6 +1675,7 @@ declare module '@strapi/strapi' {
       'api::navigation-us.navigation-us': ApiNavigationUsNavigationUs;
       'api::page.page': ApiPagePage;
       'api::property-listing.property-listing': ApiPropertyListingPropertyListing;
+      'api::property.property': ApiPropertyProperty;
       'api::province-au.province-au': ApiProvinceAuProvinceAu;
       'api::province-page-us.province-page-us': ApiProvincePageUsProvincePageUs;
       'api::studio-page-au.studio-page-au': ApiStudioPageAuStudioPageAu;
