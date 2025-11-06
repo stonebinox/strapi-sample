@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_common_browse_properties_banners",
+  "info": {
+    "displayName": "Browse Properties Banner",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

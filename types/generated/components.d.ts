@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface CommonBrowsePropertiesBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_browse_properties_banners';
+  info: {
+    displayName: 'Browse Properties Banner';
+    icon: 'apps';
+  };
+  attributes: {
+    title: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonClassTableBanner extends Struct.ComponentSchema {
   collectionName: 'components_common_class_table_banners';
   info: {
@@ -752,6 +764,7 @@ export interface SharedTestimonialGroup extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'common.browse-properties-banner': CommonBrowsePropertiesBanner;
       'common.class-table-banner': CommonClassTableBanner;
       'common.cta-callout': CommonCtaCallout;
       'common.cta-callout-studio': CommonCtaCalloutStudio;

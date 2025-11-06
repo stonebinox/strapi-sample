@@ -68,7 +68,9 @@
         "common.faq-with-testimonials",
         "common.feature-list-banner",
         "common.class-table-banner",
-        "common.image-list-banner"
+        "common.image-list-banner",
+        "common.text-list-with-description",
+        "common.browse-properties-banner"
       ],
       "required": true
     },
