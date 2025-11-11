@@ -664,6 +664,101 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiPropertyPageUsPropertyPageUs
+  extends Struct.SingleTypeSchema {
+  collectionName: 'property_page_uses';
+  info: {
+    displayName: 'Property Page US';
+    pluralName: 'property-page-uses';
+    singularName: 'property-page-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    footer: Schema.Attribute.Component<'common.simple-footer', false> &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::property-page-us.property-page-us'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    sections: Schema.Attribute.DynamicZone<
+      [
+        'shared.testimonial',
+        'shared.testimonial-group',
+        'shared.quote',
+        'shared.hero-section',
+        'components.button',
+        'common.two-video-row-banner',
+        'common.two-column-banner',
+        'common.text-list',
+        'common.text-list-with-description',
+        'common.testimonial-banner',
+        'common.simple-footer',
+        'common.navigator',
+        'common.navigator-option',
+        'common.navigator-option-item',
+        'common.metadata',
+        'common.map',
+        'common.links',
+        'common.image-slideshow-with-text-banner',
+        'common.image-list-banner',
+        'common.hero-with-testimonial',
+        'common.heading',
+        'common.free-block',
+        'common.free-block-with-images-banner',
+        'common.form-banner',
+        'common.footer',
+        'common.featured-banner',
+        'common.featured-banner-split',
+        'common.feature-text-with-testimonials',
+        'common.feature-list-banner',
+        'common.feature-image-with-testimonials',
+        'common.feature-banner-vertical-split',
+        'common.faq-with-testimonials',
+        'common.faq-entry',
+        'common.faq-block',
+        'common.faq-banner',
+        'common.explainer-with-testimonials',
+        'common.domain-suffix',
+        'common.description-with-video',
+        'common.description-with-testimonial',
+        'common.cta-callout',
+        'common.cta-callout-studio',
+        'common.class-table-banner',
+        'common.browse-properties-banner',
+        'common.property-hero-banner',
+        'common.property-details-banner',
+        'common.financial-details-banner',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPropertyProperty extends Struct.CollectionTypeSchema {
   collectionName: 'properties';
   info: {
@@ -1597,6 +1692,7 @@ declare module '@strapi/strapi' {
       'api::navigation-au.navigation-au': ApiNavigationAuNavigationAu;
       'api::navigation-us.navigation-us': ApiNavigationUsNavigationUs;
       'api::page.page': ApiPagePage;
+      'api::property-page-us.property-page-us': ApiPropertyPageUsPropertyPageUs;
       'api::property.property': ApiPropertyProperty;
       'api::province-au.province-au': ApiProvinceAuProvinceAu;
       'api::province-page-us.province-page-us': ApiProvincePageUsProvincePageUs;

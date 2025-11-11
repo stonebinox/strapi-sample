@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_common_property_hero_banners",
+  "info": {
+    "displayName": "Property Hero Banner",
+    "icon": "picture"
+  },
+  "options": {},
+  "attributes": {
+    "returnLink": {
+      "type": "component",
+      "component": "common.links",
+      "repeatable": false,
+      "required": true
+    },
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    },
+    "priceHeading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

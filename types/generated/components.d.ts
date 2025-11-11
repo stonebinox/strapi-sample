@@ -290,6 +290,17 @@ export interface CommonFeaturedBannerSplit extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonFinancialDetailsBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_financial_details_banners';
+  info: {
+    displayName: 'Financial Details Banner';
+    icon: 'bulletList';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'common.heading', false>;
+  };
+}
+
 export interface CommonFooter extends Struct.ComponentSchema {
   collectionName: 'components_common_footers';
   info: {
@@ -539,6 +550,34 @@ export interface CommonPricingBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface CommonPropertyDetailsBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_property_details_banners';
+  info: {
+    displayName: 'Property Details Banner';
+    icon: 'filter';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+  };
+}
+
+export interface CommonPropertyHeroBanner extends Struct.ComponentSchema {
+  collectionName: 'components_common_property_hero_banners';
+  info: {
+    displayName: 'Property Hero Banner';
+    icon: 'picture';
+  };
+  attributes: {
+    heading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    priceHeading: Schema.Attribute.Component<'common.heading', false> &
+      Schema.Attribute.Required;
+    returnLink: Schema.Attribute.Component<'common.links', false> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface CommonProvince extends Struct.ComponentSchema {
   collectionName: 'components_common_provinces';
   info: {
@@ -782,6 +821,7 @@ declare module '@strapi/strapi' {
       'common.feature-text-with-testimonials': CommonFeatureTextWithTestimonials;
       'common.featured-banner': CommonFeaturedBanner;
       'common.featured-banner-split': CommonFeaturedBannerSplit;
+      'common.financial-details-banner': CommonFinancialDetailsBanner;
       'common.footer': CommonFooter;
       'common.form-banner': CommonFormBanner;
       'common.free-block': CommonFreeBlock;
@@ -798,6 +838,8 @@ declare module '@strapi/strapi' {
       'common.navigator-option': CommonNavigatorOption;
       'common.navigator-option-item': CommonNavigatorOptionItem;
       'common.pricing-banner': CommonPricingBanner;
+      'common.property-details-banner': CommonPropertyDetailsBanner;
+      'common.property-hero-banner': CommonPropertyHeroBanner;
       'common.province': CommonProvince;
       'common.province-map': CommonProvinceMap;
       'common.simple-footer': CommonSimpleFooter;

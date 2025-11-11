@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_common_financial_details_banners",
+  "info": {
+    "displayName": "Financial Details Banner",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "component",
+      "component": "common.heading",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}
