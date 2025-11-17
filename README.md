@@ -2,43 +2,30 @@
 
 Strapi comes with a full featured [Command Line Interface](https://docs.strapi.io/dev-docs/cli) (CLI) which lets you scaffold and manage your project in seconds.
 
+### Install
+
+Install with `npm install`
+
 ### `develop`
 
-Start your Strapi application with autoReload enabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-develop)
+Before running it for the first time, make sure you have
+- postgres running locally
+- a copy of our `.env` file (tweak postgres credentials to match your own)
+- run `npm run build` as this compiles with the env vars. 
+
+Once this is done, you can run
 
 ```
-npm run develop
-# or
-yarn develop
+npm run dev
 ```
 
-### `start`
+You'll need to create an account locally to explore this locally. Bear in mind that each time you pull down from any remote branch and there are changes to schema/structure (why else would you pull down), you'll need to review your Public & Authenticated Role Permissions along with your user Role permissions for each content type (collection, single type, media, etc.)
 
-Start your Strapi application with autoReload disabled. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-start)
-
-```
-npm run start
-# or
-yarn start
-```
-
-### `build`
-
-Build your admin panel. [Learn more](https://docs.strapi.io/dev-docs/cli#strapi-build)
-
-```
-npm run build
-# or
-yarn build
-```
+Ideally, this needs to be in sync with what the team follows across environments.
 
 ## ⚙️ Deployment
 
-Strapi gives you many possible deployment options for your project including [Strapi Cloud](https://cloud.strapi.io). Browse the [deployment section of the documentation](https://docs.strapi.io/dev-docs/deployment) to find the best solution for your use case.
-
-```
-yarn strapi deploy
-```
+TBD
 
 ## 📚 Learn more
 
